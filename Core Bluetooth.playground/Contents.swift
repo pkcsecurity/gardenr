@@ -96,7 +96,7 @@ class BLEDiscovery: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        if peripheral.identifier == UUID(uuidString:"722E5F19-61B4-4A74-9500-84A41F943DCB") {
+        if peripheral.name == "OBDBLE" {
             print("advertisementData:", advertisementData)
             self.myPeripheral = peripheral
             central.connect(peripheral, options: nil)
